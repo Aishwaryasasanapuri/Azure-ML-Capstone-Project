@@ -1,4 +1,3 @@
-capstoneautoml
 Tips: You can try get_logs(): https://aka.ms/debugimage#dockerlog or local deployment: https://aka.ms/debugimage#debug-locally to debug if deployment takes longer than 10 minutes.
 Running..............................................
 Failed
