@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # ---------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # ---------------------------------------------------------
@@ -23,28 +17,40 @@ from inference_schema.schema_decorators import input_schema, output_schema
 from inference_schema.parameter_types.numpy_parameter_type import NumpyParameterType
 from inference_schema.parameter_types.pandas_parameter_type import PandasParameterType
 
+
+input_sample = pd.DataFrame({"RI": pd.Series([0.0], dtype="float64"), "Na": pd.Series([0.0], dtype="float64"), "Mg": pd.Series([0.0], dtype="float64"), "Al": pd.Series([0.0], dtype="float64"), "Si": pd.Series([0.0], dtype="float64"), "K": pd.Series([0.0], dtype="float64"), "Ca": pd.Series([0.0], dtype="float64"), "Ba": pd.Series([0.0], dtype="float64"), "Fe": pd.Series([0.0], dtype="float64")})
+output_sample = np.array([0])
+try:
+    log_server.enable_telemetry(INSTRUMENTATION_KEY)
+    log_server.set_verbosity('INFO')
+    logger = logging.getLogger('azureml.automl.core.scoring_script')
+except:
+    pass
+
+
 def init():
     global model
-    # AZUREML_MODEL_DIR is an environment variable created during deployment.
-    # It is the path to the model folder (./azureml-models/$MODEL_NAME/$VERSION)
-    
-    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'hypermodel.pkl')
-    model = joblib.load(model_path)
-
-def run(raw_data):
+    # This name is model.id of model that we want to deploy deserialize the model file back
+    # into a sklearn model
+    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'model.pkl')
+    path = os.path.normpath(model_path)
+    path_split = path.split(os.sep)
+    log_server.update_custom_dimensions({'model_name': path_split[1], 'model_version': path_split[2]})
     try:
-        data = json.loads(raw_data)['data']
-        data = pd.DataFrame.from_dict(data)
-        # make prediction
-        result = model.predict(data)
-        # Log the input and output data to appinsights:
-        info = {
-            "input": raw_data,
-            "output": result.tolist()
-            }
-        print(json.dumps(info))
-        return result.tolist()
-    except Exception as ex:
-        error = str(ex)
-        return error
+        logger.info("Loading model from path.")
+        model = joblib.load(model_path)
+        logger.info("Loading successful.")
+    except Exception as e:
+        logging_utilities.log_traceback(e, logger)
+        raise
 
+
+@input_schema('data', PandasParameterType(input_sample))
+@output_schema(NumpyParameterType(output_sample))
+def run(data):
+    try:
+        result = model.predict(data)
+        return json.dumps({"result": result.tolist()})
+    except Exception as e:
+        result = str(e)
+        return json.dumps({"error": result})
