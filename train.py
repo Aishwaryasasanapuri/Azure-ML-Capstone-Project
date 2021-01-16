@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[ ]:
+
+
 # Copyright (c) Microsoft. All rights reserved.
 # Licensed under the MIT license.
 
@@ -28,21 +31,21 @@ run = Run.get_context()
 
 ws = run.experiment.workspace
 found = False
-key = "Glass dataset"
+key = "Glass Dataset"
 description_text = "Glass classification"
 
 if key in ws.datasets.keys(): 
         found = True
         dataset = ws.datasets[key] 
 
-ds= TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/Aishwaryasasanapuri/Heart-Failure-prediction-project/main/heart_failure_clinical_records_dataset.csv")
+ds= TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/Aishwaryasasanapuri/test2/main/glass.csv")
 
 def clean_data(data):
   
     # Clean the data
     x_df = data.to_pandas_dataframe().dropna()
-    x_df.drop("name", inplace=True, axis=1)
-    jobs = pd.get_dummies(x_df.job, prefix="job")
+    #x_df.drop("name", inplace=True, axis=1)
+    #jobs = pd.get_dummies(x_df.job, prefix="job")
     y_df = x_df.pop("Type")
     
     return x_df, y_df
