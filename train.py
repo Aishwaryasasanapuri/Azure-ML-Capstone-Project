@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 # Copyright (c) Microsoft. All rights reserved.
 # Licensed under the MIT license.
 
@@ -26,6 +23,17 @@ from azureml.core import Dataset
 
 
 run = Run.get_context()
+
+# Retrive current run's information
+
+ws = run.experiment.workspace
+found = False
+key = "Glass dataset"
+description_text = "Glass classification"
+
+if key in ws.datasets.keys(): 
+        found = True
+        dataset = ws.datasets[key] 
 
 ds= TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/Aishwaryasasanapuri/Heart-Failure-prediction-project/main/heart_failure_clinical_records_dataset.csv")
 
