@@ -16,7 +16,7 @@ The project is carried out using below steps
 - Deploy best model
 - Test model endpoint
 
-![](flowchart.jpg)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Flowchart.jpg)
 
 ## Dataset
 
@@ -82,36 +82,58 @@ To access the dataset to workspace we have two methods
 
 Below is the screenshot after the dataset is registered through local files
 
-![](Dataset)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Dataset.JPG)
 
 Accessing the dataset through Github
 
-![](registering_ds)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/registering_ds.JPG)
 
 - Before proceeding with the implementation we will create a Compute instance to run the Jupyter notebooks
 
-![](Computer instance)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Compute%20instance.JPG)
 
 ## Hyper parameter tuning using hyperdrive 
+
+Hyperdrive architecture is as below:-
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Hyperdrive_design.JPG)
 
 - The model I have choosen is Logistic regression with inverse regularisation parameter (--C) which helps in controlling the model from overfitting and max-iter - number of iterations as another hyper-parameter.
 - I have used Randomsampling method in the parameter sampling
 - I have used Banditpolicy as the early stopping criteria. The modelling stops if the policy doesn't meet the slack factor, delay interval in their prescribed limits/values.
 
-![]( hyperdrive_config)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/HD_config.JPG)
 
 ### Run widgets
 
-![](hd_runs)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_run_nb.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_scatter.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_acc_nb.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_run.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_models.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_child_runs.JPG)
 
 ### Best model 
 
-![](hd_bestmodel)
+The best hyperdrive model
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_bestrun_page.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_bestrun_metrics.JPG)
 
 ### Results
 
-![](hd_params)
-![]( hd_best_i)
+Best run id:- 
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_bestrun_i.JPG)
+
+Besr run parameters :-
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_params.JPG)
 
 ## Auto ML
 
@@ -119,41 +141,62 @@ Automl is also known as Automated ML which helps in rapidly performing multiple 
 
 The below are the 'Automl' settings and configuration taken
 
-![](automl_config)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Automl%20config.JPG)
 
 - Here the problem is a classification problem hence we have taken task ='classification'
 - We have given early timeout to be 30 mins
 - n cross validation to be 5
 - Compute target is the cluster on which the computation to be performed.
 
+### Run widgets
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Automl_run.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_models.JPG)
+
 ## Best model
 
 Here we got **voting classifier** as out best model
 
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Aml_bestmodel.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_metrics_bestmodel.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Aml_best_run_id.JPG)
+
+### Registering the model
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_register.JPG)
 
 ## Results
 
 On comparing the best models of both Hyperdrive and Automl , we know that we found Voting classifier through Automl is having better performance
 
-- Hyperdrvie model:-  Accuracy- 0.66 , AUC_weighted = 0.
-- AutoML model :-     Accuracy- 0.66 , AUC_weighted = 0.
+- Hyperdrvie model:-  Accuracy- 0.6615 , AUC_weighted = 0.78
+- AutoML model :-     Accuracy- 0.75760 , AUC_weighted = 0.94213
 
-![](voting classifier)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/voting_run_metrics.JPG)
 
 ## Model deployment
 
 We deploy the best model using ACI instance and have also enabled the insights and enabled the Authentication to consume the restpoint.
 
-![](endpoint)
-![](application insights)
+Service status is **Healthy**
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/endpoint.JPG)
+
+Applications Insights is enabled
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/appinsights.JPG)
+
 
 ### Consuming endpoints
 
-![](updating endpoint)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/updating%20endpoint.JPG)
 
 ### Testing endpoints
 
-![](testing service)
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/testing%20service.JPG)
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. [Link](https://youtu.be/6MLM2LC9qO8)
@@ -178,14 +221,14 @@ We deploy the best model using ACI instance and have also enabled the insights a
 
 ## References :
 
-[Github starter code](https://github.com/udacity/nd00333-capstone/tree/master/starter_file)
-[How to deploy](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?view=iotedge-2018-06&tabs=python)
-[Enabling insights](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-app-insights)
-[Deploying AZ ML on IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=iotedge-2018-06&viewFallbackFrom=azure-ml-py#create-and-deploy-azure-machine-learning-module)
+- [Github starter code](https://github.com/udacity/nd00333-capstone/tree/master/starter_file)
+- [How to deploy](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?view=iotedge-2018-06&tabs=python)
+- [Enabling insights](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-app-insights)
+- [Deploying AZ ML on IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=iotedge-2018-06&viewFallbackFrom=azure-ml-py#create-and-deploy-azure-machine-learning-module)
 
 #### Error fixes
-[](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-debug-visual-studio-code#recommendations-for-error-fix)
-[](https://stackoverflow.com/questions/60391230/azure-504-deploymenttimedout-error-service-deployment-polling-reached-non-succ)
-[](https://github.com/MicrosoftDocs/azure-docs/issues/44806)
-https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#imbalance
-https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py
+- [](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-debug-visual-studio-code#recommendations-for-error-fix)
+- [](https://stackoverflow.com/questions/60391230/azure-504-deploymenttimedout-error-service-deployment-polling-reached-non-succ)
+- [](https://github.com/MicrosoftDocs/azure-docs/issues/44806)
+- https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#imbalance
+- https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py
