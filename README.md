@@ -150,6 +150,8 @@ The below are the 'Automl' settings and configuration taken
 
 ### Run widgets
 
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_run_nb.JPG)
+
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Automl_run.JPG)
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_models.JPG)
@@ -226,9 +228,9 @@ Applications Insights is enabled
 - [Enabling insights](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-app-insights)
 - [Deploying AZ ML on IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=iotedge-2018-06&viewFallbackFrom=azure-ml-py#create-and-deploy-azure-machine-learning-module)
 
-#### Error fixes
-- [](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-debug-visual-studio-code#recommendations-for-error-fix)
-- [](https://stackoverflow.com/questions/60391230/azure-504-deploymenttimedout-error-service-deployment-polling-reached-non-succ)
-- [](https://github.com/MicrosoftDocs/azure-docs/issues/44806)
+#### Documents refered to fix Error cause during Model deployment
+- https://docs.microsoft.com/en-us/azure/machine-learning/how-to-debug-visual-studio-code#recommendations-for-error-fix
+- https://stackoverflow.com/questions/60391230/azure-504-deploymenttimedout-error-service-deployment-polling-reached-non-succ
+- https://github.com/MicrosoftDocs/azure-docs/issues/44806
 - https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#imbalance
 - https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py
