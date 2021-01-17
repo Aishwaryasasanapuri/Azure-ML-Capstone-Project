@@ -1,0 +1,3 @@
+{"process_name":"worker","timestamp":"2021-01-17T11:54:32.877347751Z","status":"Started"}
+{"process_name":"worker","timestamp":"2021-01-17T11:56:00.770811198Z","status":"Completed"}
+{"process_name":"*","timestamp":"2021-01-17T11:56:00.897545153Z","status":"Terminated"}

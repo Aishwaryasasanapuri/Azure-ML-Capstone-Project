@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 # Copyright (c) Microsoft. All rights reserved.
 # Licensed under the MIT license.
 

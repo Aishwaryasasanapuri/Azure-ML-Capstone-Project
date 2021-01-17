@@ -8,9 +8,9 @@ import requests
 import json
 
 # URL for the web service
-scoring_uri = aci_service.swagger_uri #'<your web service URI>'
+scoring_uri = 'http://aea0d434-7b93-4641-af8e-9240aafd1c0b.southcentralus.azurecontainer.io/score' #'<your web service URI>'
 # If the service is authenticated, set the key or token
-key =  aci_service.get_keys()[0]  #'<your key or token>'
+key =  'mP2nsRiJnjhOxCK7vZYgORXbpA3HFXyQ'  #'<your key or token>'
 
 # Two sets of data to score, so we get two results back
 data = {"data":
