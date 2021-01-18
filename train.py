@@ -35,7 +35,7 @@ if key in ws.datasets.keys():
         found = True
         dataset = ws.datasets[key] 
 
-ds= TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/Aishwaryasasanapuri/test2/main/glass.csv")
+ds= TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/main/glass.csv")
 
 def clean_data(data):
   
