@@ -22,7 +22,7 @@ The project is carried out using below steps
 
 ### Overview
 
-Dataset is downloaded from [Kaggle](https://www.kaggle.com/uciml/glass) datasets and also through [UCI ML](https://archive.ics.uci.edu/ml/datasets/Glass+Identification) repository. The same can be uploaded to github and used through Githubraw content.
+Dataset is downloaded from [Kaggle](https://www.kaggle.com/uciml/glass) datasets and also through [UCI ML](https://archive.ics.uci.edu/ml/datasets/Glass+Identification) repository. The same can be uploaded to github and used through Github raw content.
 
 **Citation**:
 
@@ -84,7 +84,7 @@ Below is the screenshot after the dataset is registered through local files
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Dataset.JPG)
 
-Accessing the dataset through Github
+Accessing the dataset through [Github](https://raw.githubusercontent.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/main/glass.csv)
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/registering_ds.JPG)
 
@@ -98,7 +98,7 @@ Hyperdrive architecture is as below:-
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Hyperdrive_design.JPG)
 
-- The model I have choosen is Logistic regression with inverse regularisation parameter (--C) which helps in controlling the model from overfitting and max-iter - number of iterations as another hyper-parameter.
+- The model I have choosen is Logistic regression with inverse regularisation parameter (--C) which helps in controlling the model from overfitting and (max-iter )- defines the  number of iterations as another hyper-parameter.
 - I have used Randomsampling method in the parameter sampling
 - I have used Banditpolicy as the early stopping criteria. The modelling stops if the policy doesn't meet the slack factor, delay interval in their prescribed limits/values.
 
@@ -106,11 +106,15 @@ Hyperdrive architecture is as below:-
 
 ### Run widgets
 
+- Run Details from the Jupyter notebook
+
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_run_nb.JPG)
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_scatter.JPG)
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_acc_nb.JPG)
+
+- Run details from the workspace
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/hd_run.JPG)
 
@@ -150,7 +154,11 @@ The below are the 'Automl' settings and configuration taken
 
 ### Run widgets
 
+- Run details from Jupyter notebook
+
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_run_nb.JPG)
+
+- Run details from Workspace
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Automl_run.JPG)
 
@@ -164,7 +172,11 @@ Here we got **voting classifier** as out best model
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_metrics_bestmodel.JPG)
 
+The following illustrates the Best model's run id and best run's parameters
+
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Aml_best_run_id.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/automl_best_params.JPG)
 
 ### Registering the model
 
@@ -227,6 +239,7 @@ Applications Insights is enabled
 - [How to deploy](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?view=iotedge-2018-06&tabs=python)
 - [Enabling insights](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-app-insights)
 - [Deploying AZ ML on IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=iotedge-2018-06&viewFallbackFrom=azure-ml-py#create-and-deploy-azure-machine-learning-module)
+- [ONXX in Azure ML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-onnx)
 
 #### Documents refered to fix Error cause during Model deployment
 - https://docs.microsoft.com/en-us/azure/machine-learning/how-to-debug-visual-studio-code#recommendations-for-error-fix
