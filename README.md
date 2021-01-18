@@ -193,13 +193,23 @@ On comparing the best models of both Hyperdrive and Automl , we know that we fou
 
 ## Model deployment
 
+Since we found that Automl model is the best model we are going ahead and deploying the same.
+
 We deploy the best model using ACI instance and have also enabled the insights and enabled the Authentication to consume the restpoint.
 
-Service status is **Healthy**
+Procedure to deploy the model
+
+1. Provide a scoring script which will be invoked by the web service call (using scoring.py). 
+   The scoring script must have two required functions, init() - that loads your model and run() it runs the obtained model on your input data.
+   Then provide the environment files to inference config along with the script file and deploy the service. 
+   
+2. We can deploy the services from the Azure workspace by configuring the Authentication and then going ahead and enabling the Application insights using log.py file
+
+- Service status is **Healthy**
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/endpoint.JPG)
 
-Applications Insights is enabled
+- Applications Insights is enabled
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/appinsights.JPG)
 
