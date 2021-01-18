@@ -65,6 +65,16 @@ Ian W. Evett and Ernest J. Spiehler. Rule Induction in Forensic Science. Central
 - 6 tableware
 - 7 headlamps
 
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/dataset_profile.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/dataset_profile_2.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/dataset_profile_3.JPG)
+
+- Data profile for Target variable
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/dataset_target.JPG)
+
 ### Task
 
 In this Project we will classify the given dataset into different types based on the percentage of the chemicals.
@@ -158,6 +168,10 @@ The below are the 'Automl' settings and configuration taken
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_run_nb.JPG)
 
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_run_nb2.JPG)
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/aml_run_nb3.JPG)
+
 - Run details from Workspace
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Automl_run.JPG)
@@ -167,6 +181,8 @@ The below are the 'Automl' settings and configuration taken
 ## Best model
 
 Here we got **voting classifier** as out best model
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/automl_bestmodel.JPG)
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Aml_bestmodel.JPG)
 
@@ -191,9 +207,17 @@ On comparing the best models of both Hyperdrive and Automl , we know that we fou
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/voting_run_metrics.JPG)
 
+### Experiment Details of both the Methods
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/experiments.JPG)
+
 ## Model deployment
 
 Since we found that Automl model is the best model we are going ahead and deploying the same.
+
+- We can view the registered models below
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/Registered_moels.JPG)
 
 We deploy the best model using ACI instance and have also enabled the insights and enabled the Authentication to consume the restpoint.
 
@@ -220,7 +244,12 @@ Procedure to deploy the model
 
 ### Testing endpoints
 
+- 1
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/testing%20service.JPG)
+
+- 2
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/testing%20service2.JPG)
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. [Link](https://youtu.be/6MLM2LC9qO8)
@@ -233,6 +262,10 @@ Procedure to deploy the model
 *(Optional):* This is where you can provide information about any standout suggestions that you have attempted.
 
 - We have enabled Application insights
+
+Here, we can see the Application insights view 
+
+![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/appinsightsview.JPG)
 
 ## Future Improvements
 
