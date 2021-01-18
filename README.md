@@ -203,7 +203,7 @@ The following illustrates the Best model's run id and best run's parameters
 On comparing the best models of both Hyperdrive and Automl , we know that we found Voting classifier through Automl is having better performance
 
 - Hyperdrvie model:-  Accuracy- 0.6615 , AUC_weighted = 0.78
-- AutoML model :-     Accuracy- 0.75760 , AUC_weighted = 0.94213
+- AutoML model :-     Accuracy- 0.7893 , AUC_weighted = 0.9445
 
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/voting_run_metrics.JPG)
 
@@ -252,7 +252,7 @@ Procedure to deploy the model
 ![](https://github.com/Aishwaryasasanapuri/Azure-ML-Capstone-Project/blob/main/screenshots/testing%20service2.JPG)
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. [Link](https://youtu.be/6MLM2LC9qO8)
+*TODO* Provide a link to a screen recording of the project in action. [Link](https://youtu.be/9eh9aTi171E)
 
 - A working model
 - Demo of the deployed  model
